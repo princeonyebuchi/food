@@ -107,9 +107,10 @@ export default function RecipesPage() {
   return (
     <main className="min-h-screen bg-[#020617] text-white overflow-hidden">
       {/* Background Effects */}
-      <div className="fixed inset-0 -z-10">
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-orange-500/5 rounded-full" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-red-500/5 rounded-full" />
+      <div className="fixed inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-3xl" />
+
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-red-500/10 rounded-full blur-3xl" />
       </div>
 
       {/* Hero */}
@@ -120,18 +121,19 @@ export default function RecipesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-300 mb-6 font-semibold">
-              <FiTrendingUp /> #1 Premium Recipe Collection
+            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-orange-500/40 bg-orange-500/20 text-orange-300 mb-6 font-semibold backdrop-blur-md">
+              <FiTrendingUp className="text-orange-300" />
+              #1 Premium Recipe Collection
             </div>
 
-            <h1 className="text-6xl lg:text-8xl font-black leading-[0.95] mb-8 text-white tracking-tight">
+            <h1 className="text-6xl lg:text-8xl font-black leading-[0.95] mb-8 tracking-tight text-white">
               Delicious
               <span className="block text-orange-400">
                 Food Recipes
               </span>
             </h1>
 
-            <p className="text-white text-lg leading-relaxed max-w-2xl mb-10 font-medium">
+            <p className="text-gray-200 text-lg leading-relaxed max-w-2xl mb-10 font-medium">
               Discover luxury recipes, premium meals, chef-crafted dishes, and
               unforgettable flavors designed to make your food website stand out
               with elegance and style.
@@ -140,28 +142,39 @@ export default function RecipesPage() {
             <div className="flex flex-col sm:flex-row gap-5 mb-12">
               <button className="group bg-gradient-to-r from-orange-500 to-red-500 hover:scale-105 transition-all duration-300 px-8 py-5 rounded-2xl font-bold text-lg shadow-2xl shadow-orange-500/20 flex items-center justify-center gap-3 text-white">
                 Explore Recipes
+
                 <FiArrowRight className="group-hover:translate-x-1 transition-transform duration-300 text-white" />
               </button>
 
-              <button className="border border-white/20 hover:border-orange-400 hover:bg-orange-500/10 transition-all duration-300 px-8 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 bg-[#0f172a] text-white">
-                <FiPlay /> Watch Videos
+              <button className="border border-white/20 hover:border-orange-400 hover:bg-orange-500/10 transition-all duration-300 px-8 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 bg-[#0f172a]/90 text-white backdrop-blur-md">
+                <FiPlay className="text-orange-300" />
+                Watch Videos
               </button>
             </div>
 
             <div className="flex flex-wrap gap-10">
               <div>
                 <h3 className="text-4xl font-black text-orange-400">15K+</h3>
-                <p className="text-white font-medium">Premium Recipes</p>
+
+                <p className="text-gray-200 font-medium">
+                  Premium Recipes
+                </p>
               </div>
 
               <div>
                 <h3 className="text-4xl font-black text-orange-400">8M+</h3>
-                <p className="text-white font-medium">Monthly Visitors</p>
+
+                <p className="text-gray-200 font-medium">
+                  Monthly Visitors
+                </p>
               </div>
 
               <div>
                 <h3 className="text-4xl font-black text-orange-400">120+</h3>
-                <p className="text-white font-medium">Expert Chefs</p>
+
+                <p className="text-gray-200 font-medium">
+                  Expert Chefs
+                </p>
               </div>
             </div>
           </motion.div>
@@ -192,20 +205,20 @@ export default function RecipesPage() {
                     className="object-cover"
                   />
 
-                  <div className="absolute inset-0 bg-black/40" />
+                  <div className="absolute inset-0 bg-black/45" />
 
                   <div className="absolute bottom-0 left-0 right-0 p-8">
                     <div className="flex items-center justify-between mb-4">
-                      <span className="bg-orange-500 px-4 py-2 rounded-full text-sm font-bold text-white">
+                      <span className="bg-orange-500 px-4 py-2 rounded-full text-sm font-bold text-white shadow-lg">
                         Featured
                       </span>
 
-                      <button className="bg-black/60 p-3 rounded-full hover:bg-orange-500 transition-all duration-300">
+                      <button className="bg-black/70 p-3 rounded-full hover:bg-orange-500 transition-all duration-300">
                         <FiHeart className="text-white" />
                       </button>
                     </div>
 
-                    <h2 className="text-3xl font-black leading-tight text-white">
+                    <h2 className="text-3xl font-black leading-tight text-white drop-shadow-lg">
                       {recipe.title}
                     </h2>
                   </div>
@@ -218,13 +231,14 @@ export default function RecipesPage() {
 
       {/* Search Bar */}
       <section className="px-6 lg:px-20 mb-24">
-        <div className="max-w-7xl mx-auto bg-[#0f172a] border border-white/10 rounded-[35px] p-8 shadow-2xl">
+        <div className="max-w-7xl mx-auto bg-[#0f172a]/95 border border-white/10 rounded-[35px] p-8 shadow-2xl backdrop-blur-md">
           <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
             <div>
               <h2 className="text-4xl font-black mb-2 text-white">
                 Find Your Favorite Meals
               </h2>
-              <p className="text-white text-lg font-medium">
+
+              <p className="text-gray-300 text-lg font-medium">
                 Search thousands of luxury recipes instantly.
               </p>
             </div>
@@ -236,7 +250,7 @@ export default function RecipesPage() {
                 <input
                   type="text"
                   placeholder="Search recipes, categories, ingredients..."
-                  className="bg-transparent outline-none w-full text-white placeholder:text-gray-300"
+                  className="bg-transparent outline-none w-full text-white placeholder:text-gray-400"
                 />
               </div>
 
@@ -257,7 +271,7 @@ export default function RecipesPage() {
                 Top Categories
               </h2>
 
-              <p className="text-white text-lg font-medium">
+              <p className="text-gray-300 text-lg font-medium">
                 Explore our most popular food collections.
               </p>
             </div>
@@ -276,7 +290,7 @@ export default function RecipesPage() {
                 key={category}
                 whileHover={{ scale: 1.05, y: -5 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[#0f172a] border border-white/10 hover:border-orange-400 hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-500 transition-all duration-300 rounded-3xl py-6 font-bold text-white"
+                className="bg-[#0f172a] border border-white/10 hover:border-orange-400 hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-500 transition-all duration-300 rounded-3xl py-6 font-bold text-white shadow-lg"
               >
                 {category}
               </motion.button>
@@ -294,13 +308,14 @@ export default function RecipesPage() {
                 Popular Recipes
               </h2>
 
-              <p className="text-white text-lg font-medium">
+              <p className="text-gray-300 text-lg font-medium">
                 Hand-picked premium dishes loved by food enthusiasts.
               </p>
             </div>
 
             <button className="hidden md:flex items-center gap-3 bg-[#0f172a] hover:bg-orange-500 transition-all duration-300 border border-white/10 px-7 py-4 rounded-2xl font-bold text-white">
               Explore More
+
               <FiArrowRight />
             </button>
           </div>
@@ -322,20 +337,20 @@ export default function RecipesPage() {
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
 
-                  <div className="absolute inset-0 bg-black/30" />
+                  <div className="absolute inset-0 bg-black/35" />
 
                   <div className="absolute top-5 left-5 bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-full text-sm font-bold shadow-lg text-white">
                     {recipe.category}
                   </div>
 
-                  <button className="absolute top-5 right-5 bg-black/60 p-3 rounded-full hover:bg-orange-500 transition-all duration-300">
+                  <button className="absolute top-5 right-5 bg-black/70 p-3 rounded-full hover:bg-orange-500 transition-all duration-300">
                     <FiHeart className="text-white" />
                   </button>
                 </div>
 
                 <div className="p-7">
                   <div className="flex items-center justify-between mb-5 text-sm">
-                    <div className="flex items-center gap-2 text-white font-medium">
+                    <div className="flex items-center gap-2 text-gray-200 font-medium">
                       <FiClock className="text-orange-400" />
                       {recipe.time}
                     </div>
@@ -350,14 +365,14 @@ export default function RecipesPage() {
                     {recipe.title}
                   </h3>
 
-                  <p className="text-white leading-relaxed mb-7 font-medium">
+                  <p className="text-gray-300 leading-relaxed mb-7 font-medium">
                     Enjoy restaurant-quality meals with rich flavors, fresh
                     ingredients, and premium cooking experiences.
                   </p>
 
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-white font-medium">
-                      <FiUsers />
+                    <div className="flex items-center gap-2 text-gray-200 font-medium">
+                      <FiUsers className="text-orange-400" />
                       2.5k Reviews
                     </div>
 
